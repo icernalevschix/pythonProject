@@ -15,7 +15,7 @@ class JobsSpider(scrapy.Spider):
         item['author'] = User(id=1)
         item['sallary'] = sallary
         item['title'] = title
-        item['content'] = ' '.join(response.xpath("//*[contains(@class, 'preview')]/div[4]/text()").getall()).strip().replace('\r\n', '')
+        item['content'] = ' '.join(response.xpath("//*[contains(@class, 'preview')]/div[4]/text()").getall()).strip()
         
         yield item
 

@@ -11,7 +11,7 @@ class PostListView(ListView):
     template_name = 'job_list/home.html'
     context_object_name = 'posts'
     # ordering = ['-date_posted'] # minus sign ( oldest to newest )
-    paginate_by = 4
+    paginate_by = 5
 
     def get_queryset(self):
         return Post.objects.filter(date_expire__gte=date.today()).order_by('-date_posted')
